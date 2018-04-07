@@ -1,9 +1,13 @@
 {
-  "name": "npm-base",
+  "name": "egg-win",
   "author": "waiting",
-  "version": "0.1.0",
-  "description": "npm boilerplate",
-  "keywords": [],
+  "version": "0.0.1",
+  "description": "egg-framework for hiding workers window support under win32",
+  "keywords": [
+    "egg",
+    "hide console",
+    "win32"
+  ],
   "engines": {
     "node": ">=8.9.0"
   },
@@ -11,12 +15,12 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bugs": {
-    "url": "https://github.com/waitingsong/npm-base/issues"
+    "url": "https://github.com/waitingsong/egg-win/issues"
   },
-  "homepage": "https://github.com/waitingsong/npm-base#readme",
+  "homepage": "https://github.com/waitingsong/egg-win#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waitingsong/npm-base.git"
+    "url": "git+https://github.com/waitingsong/egg-win.git"
   },
   "license": "MIT",
   "nyc": {
@@ -38,7 +42,10 @@
     ],
     "all": true
   },
-  "dependencies": {},
+  "dependencies": {
+    "egg": "^2.6.0",
+    "windows-window-controller": "^3.1.0"
+  },
   "devDependencies": {
     "@types/mocha": "^5.0.0",
     "@types/node": "^9.4.7",
@@ -60,7 +67,7 @@
     "ts-node": "^5.0.1",
     "tslint": "^5.9.1",
     "tslint-eslint-rules": "^5.1.0",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.1"
   },
   "scripts": {
     "bp:add": "git remote add bp https://github.com/waitingsong/npm-base",
