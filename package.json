@@ -1,7 +1,7 @@
 {
   "name": "egg-win",
   "author": "waiting",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "egg-framework for hiding workers window support under win32",
   "keywords": [
     "egg",
