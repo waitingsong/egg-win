@@ -45,7 +45,7 @@
     "all": true
   },
   "dependencies": {
-    "egg": "^2.6.0",
+    "egg": "^2.7.1",
     "egg-cors": "^2.0.0",
     "windows-window-controller": "^3.1.0"
   },
