@@ -14,12 +14,12 @@ import {
   join,
   readFileAsync,
   tmpdir,
-} from '../src/shared/index'
+} from '../shared/index'
 
 const filename = basename(__filename)
 const tmpDir = join(tmpdir(), 'test-tmp')
 const pathPrefix = 'mytest'
-const mods = rewire('../src/shared/utils')
+const mods = rewire('../shared/utils')
 
 
 describe(filename, () => {
@@ -81,6 +81,25 @@ describe(filename, () => {
 
     rmdir(randomPath, err => err && console.error(err))
   })
+
+  it('Should createDir() works with odd path', async () => {
+    const random = Math.random()
+    const randomPath = `${tmpDir}/${pathPrefix}-${random}/.test/0ab`
+
+    try {
+      await createDir(randomPath)
+    }
+    catch (ex) {
+      return assert(false, ex)
+    }
+
+    if (! await isDirExists(randomPath)) {
+      return assert(false, `folder not exists, path: "${randomPath}"`)
+    }
+
+    rmdir(randomPath, err => err && console.error(err))
+  })
+
 
   it('Should createDir() works with blank param', async () => {
     try {
