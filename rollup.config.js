@@ -27,6 +27,8 @@ const external = [
   'fs', 'path', 'util', 'os',
 ]
 
+external.push('egg', 'windows-window-controller')
+
 
 const config = [
   // CommonJS (for Node) and ES module (for bundlers) build.
