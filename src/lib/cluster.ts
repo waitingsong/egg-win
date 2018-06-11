@@ -26,11 +26,12 @@ export interface ClusterMsg {
 process.on('message', (msg: ClusterMsg) => {
   if (msg && msg.action) {
     const { action, data, from, to } = msg
-    const titleNew = parseKeyStr(data.title ? data.title : data.baseDir)
 
     // console.info('::message:', process.pid, process.ppid, msg)
     if (action === 'egg-ready') {
       if ((to === 'app' || to === 'agent') && from === 'master') {
+        const titleNew = data ? parseKeyStr(data.title ? data.title : data.baseDir) : ''
+
         titleNew && titleNew !== process.title && nwwc.set_title(titleNew, {
           matchType: 'pid',
           matchValue: process.pid,
