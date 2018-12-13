@@ -48,8 +48,9 @@
   "dependencies": {
     "egg": "^2.8.1",
     "egg-cors": "^2.0.0",
+    "ffi": "git+https://github.com/node-ffi/node-ffi.git",
     "rxjs": ">=6.2.0",
-    "windows-window-controller": "^3.1.1"
+    "windows-window-controller": "^3.2.1"
   },
   "devDependencies": {
     "@types/mocha": "*",
